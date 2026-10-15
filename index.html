@@ -12,5 +12,8 @@ button{border:0;border-radius:20px;padding:8px 14px;background:rgba(255,255,255,
 <div id="hud">0 м · 🌼 0</div>
 <div class="ui"><button id="pause">Пауза</button><button id="snd">🔊 Звук</button></div>
 <div id="menu"><h1>🌸 Цветочный бег 3D</h1><p id="msg">Беги по полю, собирай цветы 🌼 и обходи кусты с пчёлами 🐝</p><p>← → / A D / свайп — влево-вправо · Пробел / тап — прыжок</p><button id="start">Старт</button></div>
-<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
-<script type="module" src="game.js"></script></body></html>
+<div id="err" style="display:none;position:fixed;left:0;right:0;bottom:0;background:#c0392b;color:#fff;padding:12px;z-index:9;font-size:15px"></div>
+<script>function showErr(m){var e=document.getElementById('err');e.style.display='block';e.textContent='Ошибка 3D: '+m}
+addEventListener('error',function(e){showErr(e.message)});addEventListener('unhandledrejection',function(e){showErr(String(e.reason))});
+setTimeout(function(){if(!window.__ok)showErr('3D-движок не загрузился. Обнови страницу или попробуй другой браузер.')},8000);</script>
+<script type="module" src="game.js?v=3"></script></body></html>
