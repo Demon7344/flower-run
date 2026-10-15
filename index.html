@@ -1,15 +1,16 @@
 <!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-<title>Цветочный бег</title><style>
+<title>Цветочный бег 3D</title><style>
 html,body{margin:0;height:100%;overflow:hidden;background:#8fd3ff;font-family:system-ui,sans-serif;touch-action:none}
-canvas{display:block;width:100vw;height:100vh}
-.ui{position:fixed;top:12px;right:12px;display:flex;gap:8px}
-button{border:0;border-radius:20px;padding:8px 14px;background:rgba(255,255,255,.75);font-size:15px;cursor:pointer}
-#hud{position:fixed;top:14px;left:16px;color:#fff;font-size:20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.35)}
-#menu{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:0 3px 10px rgba(120,60,0,.5)}
+canvas{display:block}
+.ui{position:fixed;top:12px;right:12px;display:flex;gap:8px;z-index:2}
+button{border:0;border-radius:20px;padding:8px 14px;background:rgba(255,255,255,.8);font-size:15px;cursor:pointer}
+#hud{position:fixed;top:14px;left:16px;color:#fff;font-size:20px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.4);z-index:2}
+#menu{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-shadow:0 3px 10px rgba(120,60,0,.6);background:rgba(255,200,120,.15);z-index:3}
 #menu h1{font-size:clamp(32px,8vw,64px);margin:0 0 10px}#menu p{margin:6px;font-size:18px;text-align:center}
 #menu button{font-size:22px;padding:12px 34px;margin-top:16px;background:#ffcf4d;color:#6a3b00}
-</style></head><body><canvas id="c"></canvas>
+</style></head><body>
 <div id="hud">0 м · 🌼 0</div>
 <div class="ui"><button id="pause">Пауза</button><button id="snd">🔊 Звук</button></div>
-<div id="menu"><h1>🌸 Цветочный бег</h1><p id="msg">Беги по полю, собирай цветы 🌼 и перепрыгивай через пчелиные кусты 🐝</p><p>Пробел / ↑ / тап — прыжок (двойной тоже можно)</p><button id="start">Старт</button></div>
-<script src="game.js"></script></body></html>
+<div id="menu"><h1>🌸 Цветочный бег 3D</h1><p id="msg">Беги по полю, собирай цветы 🌼 и обходи кусты с пчёлами 🐝</p><p>← → / A D / свайп — влево-вправо · Пробел / тап — прыжок</p><button id="start">Старт</button></div>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+<script type="module" src="game.js"></script></body></html>
